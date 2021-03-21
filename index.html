@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dev.finance$</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,700;1,100;1,200;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <script src="./script.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <img src="./assets/logo.svg" alt="Logo Dev Finance">
+    </header>
+
+    <main class="container">
+        <section id="balance">
+            <h2 class="sr-only">Balanço</h2>
+
+            <div class="card">
+                <h3>
+                    <span>Entradas</span>
+                    <img src="./assets/income.svg" alt="Imagem de entradas">
+                </h3>
+                <p>R$ 5.000,00</p>
+            </div>
+
+            <div class="card">
+                <h3>
+                    <span>Saídas</span>
+                    <img src="./assets/expense.svg" alt="Imagem de saídas">
+                </h3>
+                <p>R$ 5.000,00</p>
+            </div>
+
+            <div class="card total">
+                <h3>
+                    <span>Total</span>
+                    <img src="./assets/total.svg" alt="Imagem de total">
+                </h3>
+                <p>R$ 5.000,00</p>
+            </div>
+        </section>
+        <section id="transaction">
+            <h2 class="sr-only">Transações</h2>
+
+            <a
+                href="#"
+                class="button new"
+                onclick="Modal.open()"
+            >
+                Nova transação
+            </a>
+
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Data</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td class="description">Luz</td>
+                    <td class="expense">R$ 500,00</td>
+                    <td class="date">02/02/2021</td>
+                    <td>
+                        <img src="./assets/minus.svg" alt="imagem de minus">
+                    </td>
+                </tbody>
+                <tbody>
+                    <td class="description">Criação Website</td>
+                    <td class="income"> R$ 5.000,00</td>
+                    <td class="date">02/02/2021</td>
+                    <td>
+                        <img src="./assets/minus.svg" alt="imagem de minus">
+                    </td>
+                </tbody>
+                <tbody>
+                    <td class="description">Aluguel</td>
+                    <td class="expense">R$ 3.000,00</td>
+                    <td class="date">02/02/2021</td>
+                    <td>
+                        <img src="./assets/minus.svg" alt="imagem de minus">
+                    </td>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <div id="form">
+                <h2>Nova Transação</h2>
+                <form action="">
+                    <div class="input-group">
+                        <label class="sr-only" for="description">Descrição</label>
+                        <input type="text" name="description" id="description" value="" placeholder="Descrição" />
+                    </div>
+
+                    <div class="input-group">
+                        <label class="sr-only" for="amount">Valor</label>
+                        <input type="number" name="amount" id="amount" value="" placeholder="R$ 0,00" />
+                        <small class="help">Use o sinal de negativo para despesa e vírgula para casas decimais.</small>
+
+                    </div>
+
+                    <div class="input-group">
+                        <label class="sr-only" for="transaction-date">Descrição</label>
+                        <input type="date" name="transaction-date" id="transaction-date" value=""
+                            placeholder="Descrição" />
+                    </div>
+
+                    <div class="input-group actions">
+                        <a
+                            href="#" 
+                            onclick="Modal.close()"
+                            class="button cancel">
+                            Cancelar
+                        </a>
+                        <button type="submit">Salvar</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>dev.finance$</p>
+    </footer>
+</body>
+
+</html>
